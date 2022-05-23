@@ -16,12 +16,9 @@ let auth = (req, res, next) => {
         // req에 넣어주는 이유는 router에서 사용 할 수 있도록
         req.token = token;
         req.user = user;
-
         next(); // middleware에서 계속 갈 수 있도록, 없으면 middleware에서 갇힘
     });
 }
 
 //다른파일에서 쓸 수 있게 exports
-module.exports = {
-    auth
-};
+module.exports = { auth };
